@@ -33,12 +33,11 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     resp.finish
-  end
  
-     if req.path.match(/cart/)
-      @@cart.each do |item|
-        resp.write "#{item}\n"
-      end
+       if req.path.match(/cart/)
+         @@cart.each do |item|
+         resp.write "#{item}\n"
+         end
+       end
     end
-  end
 end
