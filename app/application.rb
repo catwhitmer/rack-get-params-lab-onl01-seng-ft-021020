@@ -27,7 +27,17 @@ class Application
     else
       return "Couldn't find #{search_term}"
     end
+  end
     
+   def call(env)
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)
+    resp.finish
+  end
+ 
+   
+   
+   
     if req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
