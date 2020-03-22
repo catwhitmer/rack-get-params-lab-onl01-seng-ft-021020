@@ -28,7 +28,7 @@ class Application
       return "Couldn't find #{search_term}"
     end
     
-    if req.path.match(/items/)
+    if req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
